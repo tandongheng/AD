@@ -1,0 +1,53 @@
+﻿1，android sdk：android软件开发包
+
+2，genymotion：android手机模拟器,
+
+3，sqlite：轻量级数据储存工具
+(1)创建数据库
+private static final String TABLE_NAME="grades"
+public void onCreate(SQLiteDatabase db){
+db.execSQL("create table"+"if not exists"+TABLE_NAME+"(
++"id integer primary key"
++"name varchar"
++"sex varchar"
++"chinese integer"
++"math integer")")}
+
+(2)数据库升级
+public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
+db.execSQL("drop table if exists"+TABLE_NAME);
+This.onCreate(db);}
+
+4，事件监听器：包含一个回调方法的view类接口，负责监听Ui界面上的View类（控件）发生的各种事件，并作出相应的响应。
+
+4.1，注册事件监听器的三种方法：
+(1)使用匿名内部类
+(2)Activity类执行Listener接口。
+(3)在布局文件中直接指定事件处理程序。
+
+5，android四大组件：
+(1)Activity ： 表示一个单一屏幕上的用户界面。
+生命周期：http://www.cnblogs.com/lwbqqyumidi/p/3769113.html
+(2)Service：能够在后台运行执行长时间运行操作且不提供用户界面的应用程序组件。
+生命周期：http://www.cnblogs.com/mengdd/archive/2013/03/24/2979944.html
+(3)Broadcast Receiver：一个全局的监听器，用于监听系统全局的广播信息。
+(4)ContentProvider：不同应用程序之间进行数据交换的标准Api，实现数据共享。
+
+6，android Ui布局的7中布局管理器：
+(1)FrameLayout (帧布局管理器)
+(2)LinearLayout(Horizontal)(水平线性布局管理器)
+(3)LinearLayout(Vertical)(垂直线性布局管理器)
+(4)TableLayout(表格布局管理器)
+(5)TableRow(表格行布局管理器)
+(6)GirdLayout(网格布局管理器)
+(7)RelativeLayout(相对布局管理器)
+
+7，Intent的类型：
+(1)显式intent
+Intent i=new Intent(FirstActivity.this,SecondActivity.this);
+startActivity(i);
+(2)隐式intent
+Intent i=new Intent();
+i.setAction(android.content.ACTION.VIEW);
+i.setData(tel:15085506075);
+startActivity(i);
